@@ -9,9 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>xboot-admin</module>
         <module>xboot-core</module>
         <module>xboot-modules</module>
+        <module>xboot-admin</module>
     </modules>
 
     <properties>

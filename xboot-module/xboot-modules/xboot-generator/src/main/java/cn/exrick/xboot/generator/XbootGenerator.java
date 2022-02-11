@@ -68,13 +68,13 @@ public class XbootGenerator {
      * 生成模块路径
      * (文件自动生成至该模块下)
      */
-    private static final String MODULE = "/xboot-modules/xboot-your";
+    private static final String MODULE = "/xboot-modules/xboot-lbn";
 
     /**
      * 模块包路径
      * （下方包路径拼接使用）
      */
-    private static final String MODULE_PACKAGE = "your";
+    private static final String MODULE_PACKAGE = "lbn";
 
     /**
      * 实体类对应包
