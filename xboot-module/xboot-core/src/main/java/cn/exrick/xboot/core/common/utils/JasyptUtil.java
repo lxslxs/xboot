@@ -54,8 +54,8 @@ public class JasyptUtil {
     public static void main(String[] args) {
 
         //加密 若修改了第一个参数加密password记得在配置文件同步修改
-        System.out.println(encyptPwd("xboot", "123456"));
+        System.out.println(encyptPwd("lbn", "aA895259846"));
         //解密
-        System.out.println(decyptPwd("xboot", "PYVnAYh+j5C3jkMV1d+myj6JzDaUk7pcfTWUaYsvQdEVkuvIVf7Y0mOU9XkffxT8"));
+        System.out.println(decyptPwd("lbn", "NWmItDCJm7E+nsROepyS5X3yq5/X2d3isE00s919dDMAIIh/JJSBIBIlxWlDDITr"));
     }
 }

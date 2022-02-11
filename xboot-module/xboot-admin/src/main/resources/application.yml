@@ -1,7 +1,7 @@
 # 配置文件加密key 生产环境中可通过环境变量、命令行等形式进行设置
 jasypt:
   encryptor:
-    password: xboot
+    password: lbn
 
 server:
   port: 8888
@@ -23,10 +23,10 @@ spring:
     timeout-per-shutdown-phase: 10S
   # 数据源
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/xboot?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
-    username: root
+    url: jdbc:mysql://linbangni.mysql.cn-chengdu.rds.aliyuncs.com:33005/lbnxboot?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: lbn
     # Jasypt加密 可到common-utils中找到JasyptUtil加解密工具类生成加密结果 格式为ENC(加密结果) 以下解密结果为123456
-    password: ENC(uOtmALFgsfxgYzEg1uLXl3O/tg6X1Dy25I3SdAeqqETOyZbDwmaW0/EZEusIh6hK)
+    password: ENC(NWmItDCJm7E+nsROepyS5X3yq5/X2d3isE00s919dDMAIIh/JJSBIBIlxWlDDITr)
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
     # Druid StatViewServlet配置
@@ -37,8 +37,8 @@ spring:
         url-pattern: /druid/*
         # 允许清空统计数据
         reset-enable: true
-        login-username: root
-        login-password: ENC(uOtmALFgsfxgYzEg1uLXl3O/tg6X1Dy25I3SdAeqqETOyZbDwmaW0/EZEusIh6hK)
+        login-username: lbn
+        login-password: ENC(NWmItDCJm7E+nsROepyS5X3yq5/X2d3isE00s919dDMAIIh/JJSBIBIlxWlDDITr)
         # IP白名单 多个逗号分隔
         allow:
         # IP黑名单
@@ -47,9 +47,9 @@ spring:
         stat:
           # 开启监控sql
           enabled: true
-          # 显示并标注慢sql 默认当超过3秒显示
+          # 显示并标注慢sql 默认当超过2秒显示
           log-slow-sql: true
-          slow-sql-millis: 3000
+          slow-sql-millis: 2000
           merge-sql: true
         # 防SQL注入过滤
         wall:
@@ -63,10 +63,11 @@ spring:
       ddl-auto: update
   # Redis
   redis:
-    host: 127.0.0.1
+    host: 132.232.90.17
     # 数据库索引 默认0
     database: 1
-    port: 6379
+    port: 45321
+    password: lbn
     # 超时时间 Duration类型 3秒
     timeout: 3S
   # Elasticsearch
@@ -147,7 +148,7 @@ xboot:
     # token中存储用户权限数据 设为true开启后可避免每次请求再获取用户权限，但有可能导致编辑权限菜单后无法读取到最新权限数据（需用户重新登录）
     storePerms: true
     # token过期时间 redis模式有请求自动刷新（分钟）
-    tokenExpireTime: 60
+    tokenExpireTime: 120
     # 用户选择 保存登录状态/记住我 对应token过期时间（天）
     saveLoginTime: 7
     # 限制用户登陆错误次数（次）
